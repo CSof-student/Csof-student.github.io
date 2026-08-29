@@ -1,13 +1,12 @@
 :root {
   --ink: #111;
   --muted: #444;
-  --line: #d0d0d0;
+  --line: #d4d4d4;
   --link: #1155cc;
-  --header-bg: #e9e9e9;
-  --pad-x: 2.25rem;
-  --sidebar: 13.75rem;
-  --gap: 3.25rem;
-  --max: 68rem;
+  --header-bg: #e8e8e8;
+  --pad-x: clamp(1.5rem, 4vw, 3.5rem);
+  --sidebar: 14.5rem;
+  --gap: clamp(2.5rem, 5vw, 5rem);
 }
 
 *,
@@ -16,12 +15,12 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: auto;
+html,
+body {
+  margin: 0;
 }
 
 body {
-  margin: 0;
   color: var(--ink);
   background: #fff;
   font-family: Helvetica, Arial, sans-serif;
@@ -36,10 +35,6 @@ img {
 
 a {
   color: var(--link);
-}
-
-a:hover {
-  text-decoration: underline;
 }
 
 .skip-link {
@@ -57,9 +52,17 @@ a:hover {
 }
 
 .wrap {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 1.25rem var(--pad-x) 4rem;
+  width: 100%;
+  padding: 1.35rem var(--pad-x) 4.5rem;
+}
+
+.layout,
+.brand--top,
+.hero-grid {
+  display: grid;
+  grid-template-columns: var(--sidebar) minmax(0, 1fr);
+  column-gap: var(--gap);
+  align-items: start;
 }
 
 .brand h1,
@@ -70,7 +73,7 @@ a:hover {
 .brand h1 {
   font-size: 1.85rem;
   font-weight: 700;
-  letter-spacing: -0.02em;
+  line-height: 1.15;
 }
 
 .brand h1 a {
@@ -79,35 +82,31 @@ a:hover {
 }
 
 .brand .subtitle {
-  margin-top: 0.1rem;
+  margin-top: 0.15rem;
   font-size: 1rem;
   font-weight: 400;
 }
 
 .hero {
-  margin: 1rem calc(-1 * var(--pad-x)) 1.5rem;
-  min-height: 13.5rem;
+  margin: 1rem calc(-1 * var(--pad-x)) 1.75rem;
+  min-height: 12.5rem;
   background: #111 url("./images/hero.svg") center / cover no-repeat;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+}
+
+.hero-grid {
+  width: 100%;
+  padding: 0 var(--pad-x);
+  align-items: center;
 }
 
 .hero h2 {
   margin: 0;
-  width: 100%;
   color: #fff;
-  font-size: 2.15rem;
+  font-size: 2.05rem;
   font-weight: 700;
-  text-align: left;
-  padding-left: calc(var(--pad-x) + var(--sidebar) + var(--gap));
-}
-
-.layout {
-  display: grid;
-  grid-template-columns: var(--sidebar) minmax(0, 1fr);
-  gap: var(--gap);
-  align-items: start;
+  line-height: 1.2;
 }
 
 .sidebar {
@@ -116,12 +115,12 @@ a:hover {
 
 .contact-links {
   list-style: none;
-  margin: 0 0 1.1rem;
+  margin: 0 0 1.15rem;
   padding: 0;
 }
 
 .contact-links li {
-  margin: 0.15rem 0;
+  margin: 0.12rem 0;
 }
 
 .contact-links a {
@@ -160,22 +159,21 @@ a:hover {
   letter-spacing: 0.04em;
 }
 
-.nav-block > a:hover,
-.nav-block > a.is-active {
+.nav-block > a:hover {
   text-decoration: underline;
 }
 
 .subnav {
   list-style: none;
   margin: 0.35rem 0 0;
-  padding: 0 0 0 0.15rem;
+  padding: 0;
 }
 
 .subnav a {
   display: block;
   color: var(--ink);
   text-decoration: none;
-  font-size: 0.86rem;
+  font-size: 0.88rem;
   font-weight: 400;
   padding: 0.08rem 0;
 }
@@ -194,13 +192,13 @@ a:hover {
 }
 
 .content h3 {
-  margin: 1.6rem 0 0.35rem;
+  margin: 1.6rem 0 0.4rem;
   font-size: 1.05rem;
 }
 
 .content p {
   margin: 0 0 0.85rem;
-  max-width: 42rem;
+  max-width: 46rem;
 }
 
 .note {
@@ -208,12 +206,8 @@ a:hover {
   color: var(--muted);
 }
 
-.view {
-  display: none;
-}
-
-.view.is-visible {
-  display: block;
+.view[hidden] {
+  display: none !important;
 }
 
 body.is-about .brand--side {
@@ -226,11 +220,12 @@ body:not(.is-about) .hero {
 }
 
 body:not(.is-about) .brand--side {
-  margin-bottom: 1.15rem;
+  margin-bottom: 1.2rem;
 }
 
 .course-table {
   width: 100%;
+  max-width: 52rem;
   border-collapse: collapse;
   margin: 0 0 0.25rem;
   font-size: 0.95rem;
@@ -239,7 +234,7 @@ body:not(.is-about) .brand--side {
 .course-table th,
 .course-table td {
   text-align: left;
-  padding: 0.4rem 0.6rem;
+  padding: 0.42rem 0.65rem;
   border-bottom: 1px solid var(--line);
   vertical-align: top;
 }
@@ -261,6 +256,7 @@ body:not(.is-about) .brand--side {
 
 .figure img {
   display: block;
+  max-width: 40rem;
   border: 1px solid var(--line);
 }
 
@@ -274,25 +270,20 @@ body:not(.is-about) .brand--side {
   display: none;
 }
 
-@media (max-width: 760px) {
-  .wrap {
-    padding: 1rem 1.1rem 3rem;
+@media (max-width: 640px) {
+  .layout,
+  .brand--top,
+  .hero-grid {
+    grid-template-columns: 1fr;
+    row-gap: 0.75rem;
   }
 
   .hero {
-    margin-left: -1.1rem;
-    margin-right: -1.1rem;
-    min-height: 8.5rem;
+    min-height: 8rem;
   }
 
-  .hero h2 {
-    padding-left: 1.1rem;
-    font-size: 1.6rem;
-  }
-
-  .layout {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
+  .hero-spacer {
+    display: none;
   }
 
   .nav-toggle {
@@ -309,12 +300,7 @@ body:not(.is-about) .brand--side {
     display: none;
   }
 
-  .sidebar-panel.is-open,
-  body.is-about .sidebar-panel {
+  .sidebar-panel.is-open {
     display: block;
-  }
-
-  body.is-about .nav-toggle {
-    display: none;
   }
 }

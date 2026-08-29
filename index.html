@@ -8,19 +8,24 @@
       name="description"
       content="Portfolio: about, courses, projects, and work experience."
     />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles.css?v=2" />
   </head>
   <body class="is-about">
     <a class="skip-link" href="#main">Skip to content</a>
 
     <div class="wrap">
       <header class="brand brand--top">
-        <h1><a href="#about">Your Name</a></h1>
-        <p class="subtitle">Portfolio</p>
+        <div class="brand-block">
+          <h1><a href="#about">Your Name</a></h1>
+          <p class="subtitle">Portfolio</p>
+        </div>
       </header>
 
       <div class="hero" aria-hidden="true">
-        <h2>About Me</h2>
+        <div class="hero-grid">
+          <div class="hero-spacer"></div>
+          <h2>About Me</h2>
+        </div>
       </div>
 
       <div class="layout">
@@ -135,7 +140,7 @@
             </p>
           </article>
 
-          <article id="resume" class="view">
+          <article id="resume" class="view" hidden>
             <h2>My Resume</h2>
             <p>
               Put a PDF named <code>resume.pdf</code> in this folder, then
@@ -150,7 +155,7 @@
             </p>
           </article>
 
-          <article id="courses" class="view">
+          <article id="courses" class="view" hidden>
             <h2>Courses</h2>
             <p class="note">
               Courses currently in progress indicated by *
@@ -205,7 +210,7 @@
             </table>
           </article>
 
-          <article id="project-one" class="view">
+          <article id="project-one" class="view" hidden>
             <h2>Project one</h2>
             <p>Personal project · 2026</p>
             <p>
@@ -235,7 +240,7 @@
             </figure>
           </article>
 
-          <article id="project-two" class="view">
+          <article id="project-two" class="view" hidden>
             <h2>Project two</h2>
             <p>I worked in a team on this project.</p>
             <p>
@@ -264,7 +269,7 @@
             </figure>
           </article>
 
-          <article id="project-three" class="view">
+          <article id="project-three" class="view" hidden>
             <h2>Project three</h2>
             <p>Coursework or experiment · 2025</p>
             <p>
@@ -289,7 +294,7 @@
             </figure>
           </article>
 
-          <article id="job-one" class="view">
+          <article id="job-one" class="view" hidden>
             <h2>Organization one</h2>
             <p>Role title · City · 2025–2026</p>
             <p>
@@ -305,7 +310,7 @@
             </p>
           </article>
 
-          <article id="job-two" class="view">
+          <article id="job-two" class="view" hidden>
             <h2>Organization two</h2>
             <p>Role title · City · 2024–2025</p>
             <p>

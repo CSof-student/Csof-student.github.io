@@ -10,7 +10,9 @@ function pageFromHash() {
 
 function showPage(id) {
   views.forEach((view) => {
-    view.classList.toggle("is-visible", view.id === id);
+    const on = view.id === id;
+    view.classList.toggle("is-visible", on);
+    view.hidden = !on;
   });
 
   navLinks.forEach((link) => {

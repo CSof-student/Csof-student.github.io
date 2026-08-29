@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css?v=7" />
+    <link rel="stylesheet" href="./styles.css?v=8" />
   </head>
   <body class="is-about">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -78,7 +78,9 @@
                     >
                   </li>
                   <li>
-                    <a href="#project-two" data-page="project-two">Project two</a>
+                    <a href="#optical-stage" data-page="optical-stage"
+                      >Automated Optical Stage</a
+                    >
                   </li>
                   <li>
                     <a href="#project-three" data-page="project-three"
@@ -262,67 +264,81 @@
             </p>
 
             <h3>Design iteration</h3>
-            <div class="photo-grid photo-grid--3">
+            <div class="photo-grid photo-grid--2">
               <figure class="figure">
-                <img
-                  src="./images/shooter/prototype-early.jpg"
-                  alt="Early plywood prototype of the dual-roller shooter"
-                />
+                <video
+                  controls
+                  playsinline
+                  preload="metadata"
+                  src="./images/shooter/prototype-early.mp4"
+                >
+                  Early plywood prototype of the shooter.
+                </video>
                 <figcaption>
-                  Weeks 1–2. Plywood prototype to validate dual-roller
-                  compression.
+                  Early prototype. First plywood build used to check whether
+                  dual-roller compression could feed a ring.
                 </figcaption>
               </figure>
               <figure class="figure">
-                <img
-                  src="./images/shooter/prototype-mid.jpg"
-                  alt="Refined plywood prototype testing indexing geometry and PTFE lining"
-                />
+                <video
+                  controls
+                  playsinline
+                  preload="metadata"
+                  src="./images/shooter/prototype-better.mp4"
+                >
+                  Later prototype of the shooter, shown in slow motion.
+                </video>
                 <figcaption>
-                  Weeks 3–4. Indexing geometry and PTFE lining, aimed at a
-                  wooden goal mock-up.
-                </figcaption>
-              </figure>
-              <figure class="figure">
-                <img
-                  src="./images/shooter/final-action.jpg"
-                  alt="Near-final polycarbonate shooter launching a ring during a test shot"
-                />
-                <figcaption>
-                  Weeks 9–12. Near-final polycarbonate version indexing a ring
-                  at speed.
+                  Later prototype, slow motion. A tighter indexing path and
+                  more consistent ring feed before the polycarbonate version.
                 </figcaption>
               </figure>
             </div>
           </article>
 
-          <article id="project-two" class="view" hidden>
-            <h2>Project two</h2>
-            <p>I worked in a team on this project.</p>
+          <article id="optical-stage" class="view" hidden>
+            <h2>Automated Optical Stage Control</h2>
+            <p>Status: Ongoing / In Development</p>
             <p>
-              <strong>Objective:</strong> State the problem and the result in
-              one or two sentences.
+              I am assembling and developing software for a set of automated
+              stages that provide high-precision control of optical elements
+              on a light table. A central challenge is ensuring that the
+              system can repeatedly return to a known position with
+              approximately 30-micron precision. This project involves
+              integrating mechanical components, electronics, motor control,
+              position sensing, and firmware.
             </p>
             <p>
-              <strong>Example Activities:</strong> What you owned on the team:
-              a feature, a model, a hardware piece, documentation, or
-              experiments.
+              We are using a Nema 8 stepper motor paired with a TMC2209 motor
+              driver. TMC 2209 allows for a very small step size alongside
+              quiet, smooth operation. Most importantly, it supports a UART
+              serial interface. This connection enables the driver to provide
+              feedback to the microcontroller, allowing it to calculate the
+              load on the motor by reading the back-EMF. This telemetry
+              powers sensorless stall detection via StallGuard, which is
+              critical for our system since we do not use physical limit
+              switches.
             </p>
             <p>
-              <strong>Tools/Concepts/Skills:</strong> Python, Git, add the rest
+              However, during testing, I found that when StallGuard triggers
+              and the software halts the motor, the system does not actually
+              stop at the absolute end of the dynamic range. This discrepancy
+              is likely caused by a physical bounce when the motor operates
+              at higher velocities.
             </p>
             <p>
-              <a href="#">Source</a>
+              To solve this, I am working on programming the motor driver
+              itself to trip a physical pin from low to high the moment
+              StallGuard triggers. This tripped pin should stop the driver
+              immediately and deliver a more precise home position. If this
+              hardware pin method does not resolve the issue, I am
+              considering an empirical, brute-force approach: since the
+              initial trigger timing leaves the motor within a couple hundred
+              steps of the true home, I can simply command the motor to move
+              very slowly toward the endstop. Empirically, I know that this
+              slow creep leaves the mechanism perfectly flush with the home
+              position.
             </p>
-            <figure class="figure">
-              <img
-                src="./images/figure-placeholder.svg"
-                alt="Placeholder for a screenshot of project two"
-              />
-              <figcaption>
-                Fig. 1 Replace this image with a screenshot or diagram.
-              </figcaption>
-            </figure>
           </article>
 
           <article id="project-three" class="view" hidden>

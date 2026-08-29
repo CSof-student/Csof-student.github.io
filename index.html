@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Your Name — Portfolio</title>
+    <meta
+      name="description"
+      content="Student developer portfolio: selected projects, about, and contact."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <p class="logo"><a href="#top">YN</a></p>
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+      >
+        Menu
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <p class="eyebrow">Portfolio</p>
+        <h1>Your Name</h1>
+        <p class="lede">
+          Student developer building clear, useful software. Replace this line
+          with what you want people to remember.
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="#work">See selected work</a>
+          <a class="button button-ghost" href="#contact">Get in touch</a>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <h2>About</h2>
+        <div class="about-grid">
+          <p>
+            Write two or three sentences: what you study, what you like building,
+            and the kind of problems you want to work on. Keep it specific.
+          </p>
+          <ul class="skills">
+            <li>HTML, CSS, JavaScript</li>
+            <li>Python</li>
+            <li>Git &amp; GitHub</li>
+            <li>Add the tools you actually use</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="work" class="section">
+        <h2>Selected work</h2>
+        <ul class="project-list">
+          <li class="project">
+            <p class="project-meta">2026 · Personal</p>
+            <h3>Project one</h3>
+            <p>
+              One sentence on what it does. Another on why it matters or what
+              you learned.
+            </p>
+            <p class="project-links">
+              <a href="#">Live site</a>
+              <a href="#">Source</a>
+            </p>
+          </li>
+          <li class="project">
+            <p class="project-meta">2026 · Coursework</p>
+            <h3>Project two</h3>
+            <p>
+              Describe the problem you solved and the stack. Link the repo even
+              if there is no live demo yet.
+            </p>
+            <p class="project-links">
+              <a href="#">Source</a>
+            </p>
+          </li>
+          <li class="project">
+            <p class="project-meta">2025 · Experiment</p>
+            <h3>Project three</h3>
+            <p>
+              A smaller piece is fine. Show range: a script, a visualization, or
+              a hardware project.
+            </p>
+            <p class="project-links">
+              <a href="#">Source</a>
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <section id="contact" class="section">
+        <h2>Contact</h2>
+        <p class="lede">
+          Open to internships, collaborations, and interesting problems.
+        </p>
+        <ul class="contact-list">
+          <li>
+            <a href="mailto:you@example.com">you@example.com</a>
+          </li>
+          <li>
+            <a href="https://github.com/CSof-student">GitHub</a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/your-profile">LinkedIn</a>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>© <span id="year"></span> Your Name</p>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

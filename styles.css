@@ -1,9 +1,11 @@
 :root {
-  --ink: #111;
-  --muted: #444;
-  --line: #d4d4d4;
-  --link: #1155cc;
-  --header-bg: #e8e8e8;
+  --ink: #0f1724;
+  --muted: #5c6b80;
+  --line: #d5dee8;
+  --link: #0b7f9e;
+  --accent: #0b7f9e;
+  --header-bg: #e8eef4;
+  --paper: #f4f7fa;
   --pad-x: clamp(1.5rem, 4vw, 3.5rem);
   --sidebar: 14.5rem;
   --gap: clamp(2.5rem, 5vw, 5rem);
@@ -22,8 +24,8 @@ body {
 
 body {
   color: var(--ink);
-  background: #fff;
-  font-family: Helvetica, Arial, sans-serif;
+  background: var(--paper);
+  font-family: "IBM Plex Sans", Helvetica, Arial, sans-serif;
   font-size: 15px;
   line-height: 1.55;
 }
@@ -41,7 +43,7 @@ a {
   position: absolute;
   left: 0.75rem;
   top: -3rem;
-  background: #000;
+  background: var(--ink);
   color: #fff;
   padding: 0.4rem 0.6rem;
   z-index: 10;
@@ -71,9 +73,10 @@ a {
 }
 
 .brand h1 {
-  font-size: 1.85rem;
-  font-weight: 700;
+  font-size: 1.8rem;
+  font-weight: 600;
   line-height: 1.15;
+  letter-spacing: -0.03em;
 }
 
 .brand h1 a {
@@ -82,15 +85,19 @@ a {
 }
 
 .brand .subtitle {
-  margin-top: 0.15rem;
-  font-size: 1rem;
+  margin-top: 0.2rem;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.72rem;
   font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 
 .hero {
   margin: 1rem calc(-1 * var(--pad-x)) 1.75rem;
   min-height: 12.5rem;
-  background: #111 url("./images/hero.svg") center / cover no-repeat;
+  background: #0a1524 url("./images/hero.svg") center / cover no-repeat;
   display: flex;
   align-items: center;
 }
@@ -103,9 +110,10 @@ a {
 
 .hero h2 {
   margin: 0;
-  color: #fff;
+  color: #f4f8fc;
   font-size: 2.05rem;
-  font-weight: 700;
+  font-weight: 600;
+  letter-spacing: -0.03em;
   line-height: 1.2;
 }
 
@@ -124,21 +132,12 @@ a {
 }
 
 .contact-links a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
   color: var(--link);
   text-decoration: none;
 }
 
 .contact-links a:hover {
   text-decoration: underline;
-}
-
-.contact-links svg {
-  width: 14px;
-  height: 14px;
-  flex: none;
 }
 
 .site-nav {
@@ -154,13 +153,16 @@ a {
   display: block;
   color: var(--ink);
   text-decoration: none;
-  font-weight: 700;
-  font-size: 0.78rem;
-  letter-spacing: 0.04em;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-weight: 500;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
 }
 
-.nav-block > a:hover {
-  text-decoration: underline;
+.nav-block > a:hover,
+.nav-block > a.is-active {
+  color: var(--accent);
+  text-decoration: none;
 }
 
 .subnav {
@@ -179,21 +181,29 @@ a {
 }
 
 .subnav a:hover {
-  text-decoration: underline;
+  color: var(--accent);
 }
 
 .subnav a.is-active {
-  font-weight: 700;
+  font-weight: 600;
+  color: var(--accent);
 }
 
 .content h2 {
   margin: 0 0 0.85rem;
-  font-size: 1.85rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: -0.03em;
 }
 
 .content h3 {
   margin: 1.6rem 0 0.4rem;
-  font-size: 1.05rem;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 
 .content p {
@@ -241,7 +251,12 @@ body:not(.is-about) .brand--side {
 
 .course-table th {
   background: var(--header-bg);
-  font-weight: 700;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 
 .course-table td:first-child,
@@ -250,14 +265,45 @@ body:not(.is-about) .brand--side {
   white-space: nowrap;
 }
 
+.course-table td:first-child {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 0.86rem;
+}
+
 .figure {
   margin: 1.1rem 0 1.4rem;
 }
 
 .figure img {
   display: block;
+  width: 100%;
   max-width: 40rem;
   border: 1px solid var(--line);
+}
+
+.photo-grid .figure {
+  margin: 0;
+}
+
+.photo-grid .figure img {
+  max-width: none;
+  height: 14rem;
+  object-fit: cover;
+}
+
+.photo-grid {
+  display: grid;
+  gap: 0.85rem;
+  margin: 0.75rem 0 1.5rem;
+  max-width: 52rem;
+}
+
+.photo-grid--2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.photo-grid--3 {
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .figure figcaption {
@@ -286,21 +332,16 @@ body:not(.is-about) .brand--side {
     display: none;
   }
 
-  .nav-toggle {
-    display: inline-flex;
-    margin: 0 0 0.75rem;
-    background: #fff;
-    border: 1px solid var(--line);
-    padding: 0.35rem 0.7rem;
-    font: inherit;
-    cursor: pointer;
-  }
-
   .sidebar-panel {
-    display: none;
+    display: block;
   }
 
-  .sidebar-panel.is-open {
-    display: block;
+  .photo-grid--2,
+  .photo-grid--3 {
+    grid-template-columns: 1fr;
+  }
+
+  .photo-grid .figure img {
+    height: 12rem;
   }
 }

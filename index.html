@@ -3,12 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Your Name — Portfolio</title>
+    <title>Caroline Soffer — Portfolio</title>
     <meta
       name="description"
       content="Portfolio: about, courses, projects, and work experience."
     />
-    <link rel="stylesheet" href="./styles.css?v=2" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css?v=7" />
   </head>
   <body class="is-about">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -46,38 +52,10 @@
 
           <div id="sidebar-panel" class="sidebar-panel">
             <ul class="contact-links">
+              <li><a href="mailto:you@example.com">Email</a></li>
+              <li><a href="https://github.com/CSof-student">GitHub</a></li>
               <li>
-                <a href="mailto:you@example.com">
-                  <svg viewBox="0 0 16 16" aria-hidden="true">
-                    <path
-                      fill="currentColor"
-                      d="M1.5 3h13A1.5 1.5 0 0 1 16 4.5v7A1.5 1.5 0 0 1 14.5 13h-13A1.5 1.5 0 0 1 0 11.5v-7A1.5 1.5 0 0 1 1.5 3Zm.5 1.2V5.8L8 9.4l6-3.6V4.2L8 7.8 2 4.2Z"
-                    />
-                  </svg>
-                  Email
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/CSof-student">
-                  <svg viewBox="0 0 16 16" aria-hidden="true">
-                    <path
-                      fill="currentColor"
-                      d="M8 0a8 8 0 0 0-2.5 15.6c.4.07.5-.17.5-.38v-1.4c-2.2.47-2.7-1.06-2.7-1.06-.36-.92-.9-1.16-.9-1.16-.74-.5.06-.5.06-.5.82.06 1.25.85 1.25.85.73 1.24 1.9.88 2.36.67.07-.53.28-.88.5-1.08-1.76-.2-3.6-.88-3.6-3.92 0-.87.31-1.58.82-2.14-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.82a7.5 7.5 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.14 0 3.05-1.85 3.72-3.61 3.92.29.25.54.73.54 1.48v2.2c0 .21.1.46.54.38A8 8 0 0 0 8 0Z"
-                    />
-                  </svg>
-                  GitHub
-                </a>
-              </li>
-              <li>
-                <a href="https://www.linkedin.com/in/your-profile">
-                  <svg viewBox="0 0 16 16" aria-hidden="true">
-                    <path
-                      fill="currentColor"
-                      d="M14.8 0H1.2C.5 0 0 .5 0 1.2v13.6C0 15.5.5 16 1.2 16h13.6c.7 0 1.2-.5 1.2-1.2V1.2C16 .5 15.5 0 14.8 0ZM4.7 13.6H2.4V6h2.3v7.6ZM3.6 5A1.3 1.3 0 1 1 3.6 2.3 1.3 1.3 0 0 1 3.6 5Zm10 8.6h-2.3V9.9c0-.9 0-2-1.2-2s-1.4 1-1.4 2v3.7H6.4V6h2.2v1c.3-.6 1.1-1.2 2.2-1.2 2.4 0 2.8 1.6 2.8 3.6v4.2Z"
-                    />
-                  </svg>
-                  LinkedIn
-                </a>
+                <a href="https://www.linkedin.com/in/your-profile">LinkedIn</a>
               </li>
             </ul>
 
@@ -92,10 +70,12 @@
                 <a href="#courses" data-page="courses">COURSES</a>
               </div>
               <div class="nav-block">
-                <a href="#project-one" data-page="project-one">PROJECTS</a>
+                <a href="#shooter" data-page="shooter">PROJECTS</a>
                 <ul class="subnav">
                   <li>
-                    <a href="#project-one" data-page="project-one">Project one</a>
+                    <a href="#shooter" data-page="shooter"
+                      >FRC Shooter Subsystem</a
+                    >
                   </li>
                   <li>
                     <a href="#project-two" data-page="project-two">Project two</a>
@@ -210,34 +190,110 @@
             </table>
           </article>
 
-          <article id="project-one" class="view" hidden>
-            <h2>Project one</h2>
-            <p>Personal project · 2026</p>
+          <article id="shooter" class="view" hidden>
+            <h2>FRC Shooter Subsystem</h2>
+            <p>Design Lead &amp; CAD · FRC Team 5419 · 2024 FIRST Robotics Competition</p>
             <p>
-              <strong>Objective:</strong> One sentence on what this project
-              does and who it is for.
+              <strong>Objective:</strong> Design a shooter that takes foam rings
+              from the intake and launches them into an elevated goal with
+              consistent accuracy, and that can also reverse to deposit a ring
+              into a vertical trapdoor.
             </p>
             <p>
-              <strong>Example Activities:</strong> Describe the work you
-              actually did: design, implementation, testing, or collaboration.
-              Be concrete about the hard parts.
+              <strong>Example Activities:</strong> I was the sole designer and
+              CAD lead in Onshape, and supervised fabrication through the build
+              season. Prototypes were laser-cut from plywood; production parts
+              were CNC-cut from polycarbonate. The main problem was shot
+              consistency: early versions misfired because the ring entered at
+              varying positions. I narrowed the indexing channel so the ring
+              stayed compressed against both walls, lined the channel with PTFE
+              to remove friction variation, and switched the index drive to
+              polybelt. For trapdoor mode, free-spinning wheels let the shooter
+              pivot into place, and extra rollers pushed the ring through when
+              it was catching on the interior. Teammates handled wiring; a
+              separate subteam handled programming.
             </p>
             <p>
-              <strong>Tools/Concepts/Skills:</strong> HTML, CSS, JavaScript,
-              Git
+              <strong>Tools/Concepts/Skills:</strong> Onshape, laser
+              cutting, CNC, rapid prototyping, iteration
+              
             </p>
             <p>
-              <a href="#">Source</a>
+              <strong>Outcome:</strong> Consistent short- and long-range shots
+              under competition conditions, reliable trapdoor deposits, and a
+              mechanism that fit the robot’s space and pivot constraints. 
+              Six weeks to a competition-ready shooter; six more weeks of
+              iteration after that. Robot ultimately ranked 11th in California 
+              out of almost 300 teams
             </p>
-            <figure class="figure">
-              <img
-                src="./images/figure-placeholder.svg"
-                alt="Placeholder for a screenshot of project one"
-              />
-              <figcaption>
-                Fig. 1 Replace this image with a screenshot or diagram.
-              </figcaption>
-            </figure>
+
+            <h3>CAD</h3>
+            <div class="photo-grid photo-grid--2">
+              <figure class="figure">
+                <img
+                  src="./images/shooter/cad-transparent.jpg"
+                  alt="Transparent CAD view of the shooter showing rollers, polybelt routing, and the pivot mount"
+                />
+                <figcaption>
+                  Transparent CAD view: internal roller arrangement, polybelt
+                  routing, and pivot mount. Modeled in Onshape.
+                </figcaption>
+              </figure>
+              <figure class="figure">
+                <img
+                  src="./images/shooter/assembly-render.jpg"
+                  alt="Full assembly render of the shooter with polybelt drive, flywheel rollers, and polycarbonate side panels"
+                />
+                <figcaption>
+                  Assembly render: polybelt drive, flywheel rollers, and
+                  polycarbonate side panels.
+                </figcaption>
+              </figure>
+            </div>
+
+            <h3>How it works</h3>
+            <p>
+              Rings enter through back-end rollers and are drawn in by
+              polybelts. Beam breaks track position along the indexing channel.
+              Two front flywheels spin up, then the polybelt feeds the ring
+              between them for launch. A PTFE lining keeps friction consistent
+              from shot to shot. In trapdoor mode, the roller system reverses
+              to deposit the ring through the opening.
+            </p>
+
+            <h3>Design iteration</h3>
+            <div class="photo-grid photo-grid--3">
+              <figure class="figure">
+                <img
+                  src="./images/shooter/prototype-early.jpg"
+                  alt="Early plywood prototype of the dual-roller shooter"
+                />
+                <figcaption>
+                  Weeks 1–2. Plywood prototype to validate dual-roller
+                  compression.
+                </figcaption>
+              </figure>
+              <figure class="figure">
+                <img
+                  src="./images/shooter/prototype-mid.jpg"
+                  alt="Refined plywood prototype testing indexing geometry and PTFE lining"
+                />
+                <figcaption>
+                  Weeks 3–4. Indexing geometry and PTFE lining, aimed at a
+                  wooden goal mock-up.
+                </figcaption>
+              </figure>
+              <figure class="figure">
+                <img
+                  src="./images/shooter/final-action.jpg"
+                  alt="Near-final polycarbonate shooter launching a ring during a test shot"
+                />
+                <figcaption>
+                  Weeks 9–12. Near-final polycarbonate version indexing a ring
+                  at speed.
+                </figcaption>
+              </figure>
+            </div>
           </article>
 
           <article id="project-two" class="view" hidden>

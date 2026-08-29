@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360">
+  <rect width="720" height="360" fill="#f3f3f3" stroke="#cfcfcf"/>
+  <text x="360" y="175" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="18" fill="#666">Replace with a project image</text>
+  <text x="360" y="205" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#888">images/figure-placeholder.svg</text>
+</svg>

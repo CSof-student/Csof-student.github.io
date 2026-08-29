@@ -6,128 +6,323 @@
     <title>Your Name — Portfolio</title>
     <meta
       name="description"
-      content="Student developer portfolio: selected projects, about, and contact."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;600&display=swap"
-      rel="stylesheet"
+      content="Portfolio: about, courses, projects, and work experience."
     />
     <link rel="stylesheet" href="./styles.css" />
   </head>
-  <body>
+  <body class="is-about">
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="site-header">
-      <p class="logo"><a href="#top">YN</a></p>
-      <button
-        class="nav-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="site-nav"
-      >
-        Menu
-      </button>
-      <nav id="site-nav" class="site-nav" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#work">Work</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+    <div class="wrap">
+      <header class="brand brand--top">
+        <h1><a href="#about">Your Name</a></h1>
+        <p class="subtitle">Portfolio</p>
+      </header>
 
-    <main id="main">
-      <section class="hero" id="top">
-        <p class="eyebrow">Portfolio</p>
-        <h1>Your Name</h1>
-        <p class="lede">
-          Student developer building clear, useful software. Replace this line
-          with what you want people to remember.
-        </p>
-        <div class="hero-actions">
-          <a class="button" href="#work">See selected work</a>
-          <a class="button button-ghost" href="#contact">Get in touch</a>
-        </div>
-      </section>
+      <div class="hero" aria-hidden="true">
+        <h2>About Me</h2>
+      </div>
 
-      <section id="about" class="section">
-        <h2>About</h2>
-        <div class="about-grid">
-          <p>
-            Write two or three sentences: what you study, what you like building,
-            and the kind of problems you want to work on. Keep it specific.
-          </p>
-          <ul class="skills">
-            <li>HTML, CSS, JavaScript</li>
-            <li>Python</li>
-            <li>Git &amp; GitHub</li>
-            <li>Add the tools you actually use</li>
-          </ul>
-        </div>
-      </section>
+      <div class="layout">
+        <aside class="sidebar">
+          <header class="brand brand--side">
+            <h1><a href="#about">Your Name</a></h1>
+            <p class="subtitle">Portfolio</p>
+          </header>
 
-      <section id="work" class="section">
-        <h2>Selected work</h2>
-        <ul class="project-list">
-          <li class="project">
-            <p class="project-meta">2026 · Personal</p>
-            <h3>Project one</h3>
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="sidebar-panel"
+          >
+            Menu
+          </button>
+
+          <div id="sidebar-panel" class="sidebar-panel">
+            <ul class="contact-links">
+              <li>
+                <a href="mailto:you@example.com">
+                  <svg viewBox="0 0 16 16" aria-hidden="true">
+                    <path
+                      fill="currentColor"
+                      d="M1.5 3h13A1.5 1.5 0 0 1 16 4.5v7A1.5 1.5 0 0 1 14.5 13h-13A1.5 1.5 0 0 1 0 11.5v-7A1.5 1.5 0 0 1 1.5 3Zm.5 1.2V5.8L8 9.4l6-3.6V4.2L8 7.8 2 4.2Z"
+                    />
+                  </svg>
+                  Email
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/CSof-student">
+                  <svg viewBox="0 0 16 16" aria-hidden="true">
+                    <path
+                      fill="currentColor"
+                      d="M8 0a8 8 0 0 0-2.5 15.6c.4.07.5-.17.5-.38v-1.4c-2.2.47-2.7-1.06-2.7-1.06-.36-.92-.9-1.16-.9-1.16-.74-.5.06-.5.06-.5.82.06 1.25.85 1.25.85.73 1.24 1.9.88 2.36.67.07-.53.28-.88.5-1.08-1.76-.2-3.6-.88-3.6-3.92 0-.87.31-1.58.82-2.14-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.82a7.5 7.5 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.14 0 3.05-1.85 3.72-3.61 3.92.29.25.54.73.54 1.48v2.2c0 .21.1.46.54.38A8 8 0 0 0 8 0Z"
+                    />
+                  </svg>
+                  GitHub
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/your-profile">
+                  <svg viewBox="0 0 16 16" aria-hidden="true">
+                    <path
+                      fill="currentColor"
+                      d="M14.8 0H1.2C.5 0 0 .5 0 1.2v13.6C0 15.5.5 16 1.2 16h13.6c.7 0 1.2-.5 1.2-1.2V1.2C16 .5 15.5 0 14.8 0ZM4.7 13.6H2.4V6h2.3v7.6ZM3.6 5A1.3 1.3 0 1 1 3.6 2.3 1.3 1.3 0 0 1 3.6 5Zm10 8.6h-2.3V9.9c0-.9 0-2-1.2-2s-1.4 1-1.4 2v3.7H6.4V6h2.2v1c.3-.6 1.1-1.2 2.2-1.2 2.4 0 2.8 1.6 2.8 3.6v4.2Z"
+                    />
+                  </svg>
+                  LinkedIn
+                </a>
+              </li>
+            </ul>
+
+            <nav class="site-nav" aria-label="Primary">
+              <div class="nav-block">
+                <a href="#about" data-page="about">ABOUT ME</a>
+              </div>
+              <div class="nav-block">
+                <a href="#resume" data-page="resume">MY RESUME</a>
+              </div>
+              <div class="nav-block">
+                <a href="#courses" data-page="courses">COURSES</a>
+              </div>
+              <div class="nav-block">
+                <a href="#project-one" data-page="project-one">PROJECTS</a>
+                <ul class="subnav">
+                  <li>
+                    <a href="#project-one" data-page="project-one">Project one</a>
+                  </li>
+                  <li>
+                    <a href="#project-two" data-page="project-two">Project two</a>
+                  </li>
+                  <li>
+                    <a href="#project-three" data-page="project-three"
+                      >Project three</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="nav-block">
+                <a href="#job-one" data-page="job-one">WORK EXPERIENCE</a>
+                <ul class="subnav">
+                  <li>
+                    <a href="#job-one" data-page="job-one">Organization one</a>
+                  </li>
+                  <li>
+                    <a href="#job-two" data-page="job-two">Organization two</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </aside>
+
+        <main id="main" class="content">
+          <article id="about" class="view is-visible">
+            <h2>About Me</h2>
             <p>
-              One sentence on what it does. Another on why it matters or what
-              you learned.
+              Replace this paragraph with a short introduction: what you study,
+              what you like building, and the kind of work you want next.
             </p>
-            <p class="project-links">
-              <a href="#">Live site</a>
+            <p>
+              Add a second paragraph with a bit more detail — coursework,
+              tools you use, or a project you are proud of. Link anything
+              useful, such as
+              <a href="https://github.com/CSof-student">your GitHub</a>.
+            </p>
+            <p>
+              Keep this page specific. Two or three short paragraphs is enough.
+            </p>
+          </article>
+
+          <article id="resume" class="view">
+            <h2>My Resume</h2>
+            <p>
+              Put a PDF named <code>resume.pdf</code> in this folder, then
+              point this page at it.
+            </p>
+            <p>
+              <a href="./resume.pdf">Download resume (PDF)</a>
+            </p>
+            <p class="note">
+              Until that file exists, the link above will 404. You can also
+              change the “MY RESUME” nav item to open the PDF directly.
+            </p>
+          </article>
+
+          <article id="courses" class="view">
+            <h2>Courses</h2>
+            <p class="note">
+              Courses currently in progress indicated by *
+            </p>
+
+            <h3>Computer Science</h3>
+            <table class="course-table">
+              <thead>
+                <tr>
+                  <th>Course Code</th>
+                  <th>Course Name</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>CPSC 110</td>
+                  <td>Computation, Programs, and Programming</td>
+                </tr>
+                <tr>
+                  <td>CPSC 210*</td>
+                  <td>Software Construction</td>
+                </tr>
+                <tr>
+                  <td>CPSC 221</td>
+                  <td>Basic Algorithms and Data Structures</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h3>Math / Statistics</h3>
+            <table class="course-table">
+              <thead>
+                <tr>
+                  <th>Course Code</th>
+                  <th>Course Name</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>MATH 100</td>
+                  <td>Differential Calculus</td>
+                </tr>
+                <tr>
+                  <td>MATH 101</td>
+                  <td>Integral Calculus</td>
+                </tr>
+                <tr>
+                  <td>STAT 200</td>
+                  <td>Elementary Statistics</td>
+                </tr>
+              </tbody>
+            </table>
+          </article>
+
+          <article id="project-one" class="view">
+            <h2>Project one</h2>
+            <p>Personal project · 2026</p>
+            <p>
+              <strong>Objective:</strong> One sentence on what this project
+              does and who it is for.
+            </p>
+            <p>
+              <strong>Example Activities:</strong> Describe the work you
+              actually did: design, implementation, testing, or collaboration.
+              Be concrete about the hard parts.
+            </p>
+            <p>
+              <strong>Tools/Concepts/Skills:</strong> HTML, CSS, JavaScript,
+              Git
+            </p>
+            <p>
               <a href="#">Source</a>
             </p>
-          </li>
-          <li class="project">
-            <p class="project-meta">2026 · Coursework</p>
-            <h3>Project two</h3>
+            <figure class="figure">
+              <img
+                src="./images/figure-placeholder.svg"
+                alt="Placeholder for a screenshot of project one"
+              />
+              <figcaption>
+                Fig. 1 Replace this image with a screenshot or diagram.
+              </figcaption>
+            </figure>
+          </article>
+
+          <article id="project-two" class="view">
+            <h2>Project two</h2>
+            <p>I worked in a team on this project.</p>
             <p>
-              Describe the problem you solved and the stack. Link the repo even
-              if there is no live demo yet.
+              <strong>Objective:</strong> State the problem and the result in
+              one or two sentences.
             </p>
-            <p class="project-links">
+            <p>
+              <strong>Example Activities:</strong> What you owned on the team:
+              a feature, a model, a hardware piece, documentation, or
+              experiments.
+            </p>
+            <p>
+              <strong>Tools/Concepts/Skills:</strong> Python, Git, add the rest
+            </p>
+            <p>
               <a href="#">Source</a>
             </p>
-          </li>
-          <li class="project">
-            <p class="project-meta">2025 · Experiment</p>
-            <h3>Project three</h3>
+            <figure class="figure">
+              <img
+                src="./images/figure-placeholder.svg"
+                alt="Placeholder for a screenshot of project two"
+              />
+              <figcaption>
+                Fig. 1 Replace this image with a screenshot or diagram.
+              </figcaption>
+            </figure>
+          </article>
+
+          <article id="project-three" class="view">
+            <h2>Project three</h2>
+            <p>Coursework or experiment · 2025</p>
             <p>
-              A smaller piece is fine. Show range: a script, a visualization, or
-              a hardware project.
+              <strong>Objective:</strong> A smaller project is fine. Say what
+              you built and what you learned.
             </p>
-            <p class="project-links">
-              <a href="#">Source</a>
+            <p>
+              <strong>Example Activities:</strong> Walk through the main
+              technical steps in plain language.
             </p>
-          </li>
-        </ul>
-      </section>
+            <p>
+              <strong>Tools/Concepts/Skills:</strong> Add the stack here
+            </p>
+            <figure class="figure">
+              <img
+                src="./images/figure-placeholder.svg"
+                alt="Placeholder for a screenshot of project three"
+              />
+              <figcaption>
+                Fig. 1 Replace this image with a screenshot or diagram.
+              </figcaption>
+            </figure>
+          </article>
 
-      <section id="contact" class="section">
-        <h2>Contact</h2>
-        <p class="lede">
-          Open to internships, collaborations, and interesting problems.
-        </p>
-        <ul class="contact-list">
-          <li>
-            <a href="mailto:you@example.com">you@example.com</a>
-          </li>
-          <li>
-            <a href="https://github.com/CSof-student">GitHub</a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/your-profile">LinkedIn</a>
-          </li>
-        </ul>
-      </section>
-    </main>
+          <article id="job-one" class="view">
+            <h2>Organization one</h2>
+            <p>Role title · City · 2025–2026</p>
+            <p>
+              <strong>Overview:</strong> One or two sentences on the team and
+              what you were hired to do.
+            </p>
+            <p>
+              <strong>Example Activities:</strong> Replace with two or three
+              concrete contributions. Prefer results over duties.
+            </p>
+            <p>
+              <strong>Tools/Concepts/Skills:</strong> Add tools from this role
+            </p>
+          </article>
 
-    <footer class="site-footer">
-      <p>© <span id="year"></span> Your Name</p>
-    </footer>
+          <article id="job-two" class="view">
+            <h2>Organization two</h2>
+            <p>Role title · City · 2024–2025</p>
+            <p>
+              <strong>Overview:</strong> Short context for the organization and
+              your role.
+            </p>
+            <p>
+              <strong>Example Activities:</strong> What you shipped, supported,
+              or learned.
+            </p>
+            <p>
+              <strong>Tools/Concepts/Skills:</strong> Add tools from this role
+            </p>
+          </article>
+        </main>
+      </div>
+    </div>
 
     <script src="./script.js"></script>
   </body>
